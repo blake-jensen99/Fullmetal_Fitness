@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<h1 class="text-light fs-1 text-center my-5">Full Metal Fitness</h1>
+<div class="d-flex justify-content-around text-light">
+    <div>
+        <h1 class="text-center">Register</h1>
+        @await Html.PartialAsync("_Register")
+    </div>
+    <div>
+        <h1 class="text-center">Login</h1>
+        @await Html.PartialAsync("_Login")
+    </div>
+</div>
