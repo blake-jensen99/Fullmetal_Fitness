@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="sticky-top">
         @{
             if (Context.Session.GetInt32("UserId") != null)
             {
@@ -19,6 +19,7 @@
                     <h1 class="text-light">Full Metal Fitness</h1>
                     <div class="text-light d-flex gap-3 align-items-center">
                         <a class="text-light" style="text-decoration: none;" asp-area="" asp-controller="Home" asp-action="Dashboard">Dashboard</a>
+                        <a class="text-light" style="text-decoration: none;" asp-area="" asp-controller="Workout" asp-action="NameWorkout">Add A Workout</a>
                         <form asp-controller="Home" asp-action="Logout" method="post"> <button type="submit" class="text-light" style="border: none; background: inherit;">Logout</button></form>
                     </div>
                 </nav>
@@ -27,7 +28,8 @@
 
     </header>
     <div class="container">
-        <img src="~/Static/Images/adrien-olichon-gOdavfpH-3s-unsplash.jpg" alt="background image">
+        @* <img src="~/Static/Images/3d-abstract-wave-pattern-background.jpg" alt="background image"> *@
+        <img src="~/Static/Images/2302166_7971.jpg" alt="background image">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

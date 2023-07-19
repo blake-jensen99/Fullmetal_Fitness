@@ -1,0 +1,28 @@
+
+<style>
+    .contain {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 200px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        border-radius: 10px;
+    }
+</style>
+
+@model Workout;
+
+<div class="contain">
+    <form asp-controller="Workout" asp-action="CreateWorkout" method="post" class="bg-body p-5">
+        <h1 class="text-light">Workout Name</h1>
+        <span asp-validation-for="Name" class="text-light"></span>
+        <input asp-for="Name">
+        <button type="submit" class="btn btn-outline-light">Create</button>
+    </form>
+</div>

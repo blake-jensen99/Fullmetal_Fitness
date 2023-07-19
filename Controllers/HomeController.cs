@@ -86,7 +86,8 @@ public class HomeController : Controller
     [HttpGet("/dashboard")]
     public IActionResult Dashboard()
     {
-        return View("Dash");
+        List<Workout> myWorkouts = _context.Workouts.Where(w => w.UserId == HttpContext.Session.GetInt32("UserId")).ToList();
+        return View("Dash", myWorkouts);
     }
 
 

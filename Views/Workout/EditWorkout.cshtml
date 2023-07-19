@@ -1,0 +1,37 @@
+
+@model Workout
+
+<h1 class="text-light text-center mt-3">@Model.Name</h1>
+<div class="d-flex gap-5 mt-4">
+    <div class="me-5">
+        @{Exercise passThrough = new Exercise();}
+        @{passThrough.WorkoutId = Model.WorkoutId;}
+        @await Html.PartialAsync("_ExerciseForm", passThrough)
+    </div>
+    <div class="flex-grow-1 ms-5 d-flex flex-column">
+        <h3 class="text-center text-light">Exercises</h3>
+        <table class="table table-secondary table-striped table-bordered">
+            <thead class="text-center">
+                <th scope="col" class="px-3">Name</th>
+                <th scope="col" class="px-3">Sets</th>
+                <th scope="col" class="px-3">Reps</th>
+                <th scope="col" class="px-3">Description</th>
+                <th scope="col" class="px-3">Actions</th>
+            </thead>
+            <tbody>
+                @{
+                    foreach(Exercise e in Model.MyExercises) 
+                    {
+                        <tr>
+                            <td>@e.Name</td>
+                            <td>@e.Reps</td>
+                            <td>@e.Sets</td>
+                            <td>@e.Notes</td>
+                            <td class="text-center"><form action=""><button type="submit" class="btn btn-outline-danger ">Remove</button></form></td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

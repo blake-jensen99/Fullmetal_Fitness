@@ -1,1 +1,52 @@
-<p class="text-light">test</p>
+
+
+@model List<Workout>
+
+@{
+    List<Workout> favs = new List<Workout>();
+    foreach (Workout w in Model)
+    {
+        if (w.Favorite == true)
+        {
+            favs.Add(w);
+        }
+    }
+}
+
+
+<div class="text-light d-flex justify-content-between mt-5">
+    <div class="text-center">
+        <h1 class="mb-5">My Workouts</h1>
+        @{
+            if (Model.Count == 0)
+            {
+                <p>It looks like you haven't made a workout yet.</p>
+            }
+            else 
+            {
+                foreach (Workout w in Model)
+                    {
+                        <p>@w.Name</p>
+                    }
+            }
+            
+        }
+    </div>
+    <div class="text-center">
+        <h1 class="mb-5">Favorites</h1>
+        @{
+            if (favs.Count == 0)
+            {
+                <p>It looks like you haven't favorited any workouts yet.</p>
+            }
+            else 
+            {
+                foreach (Workout w in favs)
+                    {
+                        <p>@w.Name</p>
+                    }
+            }
+            
+        }
+    </div>
+</div>

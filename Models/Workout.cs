@@ -11,6 +11,8 @@ public class Workout
     [MaxLength(55, ErrorMessage = "Workout name cannot be more than 55 chaacters long")]
     public string Name {get; set;}
 
+    public bool Favorite {get; set;} = false;
+
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; } = DateTime.Now;
 
