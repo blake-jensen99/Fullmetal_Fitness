@@ -18379,6 +18379,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Blake Jensen\\Desktop\\Fullmetal_Fitness\\Views\\Workout\\OneWorkout.cshtml",
+      "TargetPath": "Views\\Workout\\OneWorkout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Blake Jensen\\Desktop\\Fullmetal_Fitness\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "scjpuMzg645kT+PrGYHllJXt9O/d01OHhWeRS94occU=",
+  "Hash": "LlvKiQmh+t8mE4W4EFtbNR736UMnMv56B5X2pc0vKSI=",
   "Source": "Fullmetal_Fitness",
   "BasePath": "_content/Fullmetal_Fitness",
   "Mode": "Default",
@@ -1071,12 +1071,12 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\Blake Jensen\\Desktop\\Fullmetal_Fitness\\wwwroot\\Static\\Images\\adrien-olichon-gOdavfpH-3s-unsplash.jpg",
+      "Identity": "C:\\Users\\Blake Jensen\\Desktop\\Fullmetal_Fitness\\wwwroot\\Static\\Images\\2302166_7971.jpg",
       "SourceId": "Fullmetal_Fitness",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Blake Jensen\\Desktop\\Fullmetal_Fitness\\wwwroot\\",
       "BasePath": "_content/Fullmetal_Fitness",
-      "RelativePath": "Static/Images/adrien-olichon-gOdavfpH-3s-unsplash.jpg",
+      "RelativePath": "Static/Images/2302166_7971.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1085,7 +1085,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Static\\Images\\adrien-olichon-gOdavfpH-3s-unsplash.jpg"
+      "OriginalItemSpec": "wwwroot\\Static\\Images\\2302166_7971.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Blake Jensen\\Desktop\\Fullmetal_Fitness\\wwwroot\\Static\\Images\\3d-abstract-wave-pattern-background.jpg",
+      "SourceId": "Fullmetal_Fitness",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Blake Jensen\\Desktop\\Fullmetal_Fitness\\wwwroot\\",
+      "BasePath": "_content/Fullmetal_Fitness",
+      "RelativePath": "Static/Images/3d-abstract-wave-pattern-background.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Static\\Images\\3d-abstract-wave-pattern-background.jpg"
     }
   ]
 }

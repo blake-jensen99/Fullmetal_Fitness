@@ -1,5 +1,3 @@
-
-
 @model List<Workout>
 
 @{
@@ -14,39 +12,43 @@
 }
 
 
-<div class="text-light d-flex justify-content-between mt-5">
-    <div class="text-center">
-        <h1 class="mb-5">My Workouts</h1>
-        @{
-            if (Model.Count == 0)
-            {
-                <p>It looks like you haven't made a workout yet.</p>
-            }
-            else 
-            {
-                foreach (Workout w in Model)
-                    {
-                        <p>@w.Name</p>
-                    }
-            }
-            
+<div class="text-center">
+    <h1 class="my-5 text-light">My Workouts</h1>
+    @{
+        if (Model.Count == 0)
+        {
+            <p class="text-light">It looks like you don't have any workouts saved.</p>
+            <p class="text-light">Click 'Add A Workout' to get started!</p>
         }
-    </div>
-    <div class="text-center">
-        <h1 class="mb-5">Favorites</h1>
-        @{
-            if (favs.Count == 0)
-            {
-                <p>It looks like you haven't favorited any workouts yet.</p>
-            }
-            else 
-            {
-                foreach (Workout w in favs)
-                    {
-                        <p>@w.Name</p>
+        else
+        {
+            <table class="table table-secondary table-striped table-bordered">
+                <thead class="text-center">
+                    <th scope="col" class="px-3">Name</th>
+                    <th scope="col" class="px-3">Number of Exercises</th>
+                    <th scope="col" class="px-3">Actions</th>
+                </thead>
+                <tbody>
+                    @{
+                        foreach (Workout w in Model)
+                        {
+                            <tr>
+                                <td>@w.Name</td>
+                                <td>@w.MyExercises.Count</td>
+                                <td class="text-center d-flex justify-content-center gap-5"> 
+                                    <button class="btn btn-primary ">
+                                        <a asp-action="OneWorkout" asp-controller="Workout" asp-route-id="@w.WorkoutId" style="color: inherit; text-decoration: none;">View</a>
+                                    </button>
+                                    <button class="btn btn-warning">
+                                        <a asp-action="EditWorkout" asp-controller="Workout" asp-route-id="@w.WorkoutId" style="color: inherit; text-decoration: none;">Edit</a>
+                                    </button>
+                                </td>
+                            </tr>
+                        }
                     }
-            }
-            
+                </tbody>
+            </table>
         }
-    </div>
+
+    }
 </div>

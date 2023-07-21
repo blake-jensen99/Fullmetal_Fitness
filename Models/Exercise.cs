@@ -27,10 +27,3 @@ public class Exercise
 }
 
 
-
-// TO-DO
-
-// Make route for delete button
-// Make single page for workout
-// Style dash
-// Add logic for favorite

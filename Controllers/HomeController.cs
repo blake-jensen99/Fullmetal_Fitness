@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Fullmetal_Fitness.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.EntityFrameworkCore;
 
 namespace Fullmetal_Fitness.Controllers;
 
@@ -86,7 +87,7 @@ public class HomeController : Controller
     [HttpGet("/dashboard")]
     public IActionResult Dashboard()
     {
-        List<Workout> myWorkouts = _context.Workouts.Where(w => w.UserId == HttpContext.Session.GetInt32("UserId")).ToList();
+        List<Workout> myWorkouts = _context.Workouts.Include(w => w.MyExercises).Where(w => w.UserId == HttpContext.Session.GetInt32("UserId")).ToList();
         return View("Dash", myWorkouts);
     }
 

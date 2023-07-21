@@ -44,6 +44,13 @@ public class WorkoutController : Controller
         }
     }
 
+    [HttpGet("/workouts/{id}")]
+    public IActionResult OneWorkout(int id)
+    {
+        Workout? oneWorkout = _context.Workouts.Include(e => e.MyExercises).FirstOrDefault(w => w.WorkoutId == id);
+        return View("OneWorkout", oneWorkout);
+    }
+
     [HttpGet("/workouts/edit/{id}")]
     public IActionResult EditWorkout(int id) 
     {
@@ -68,6 +75,28 @@ public class WorkoutController : Controller
             _context.SaveChanges();
             return RedirectToAction ("EditWorkout", new {id = newExercise.WorkoutId});
         }
+    }
+
+    [HttpPost("/exercise/destroy/{id}")]
+    public IActionResult DestroyExercise(int id)
+    {
+        Exercise? exToDelete = _context.Exercises.SingleOrDefault(e => e.ExerciseId == id);
+        int workId = exToDelete.WorkoutId;
+        _context.Exercises.Remove(exToDelete);
+        _context.SaveChanges();
+        return RedirectToAction("EditWorkout", new {id = workId});
+    }
+
+    [HttpPost("/workouts/destroy/{id}")]
+    public IActionResult DestroyWorkout(int id)
+    {
+        Workout? workToDelete = _context.Workouts.SingleOrDefault(w => w.WorkoutId == id);
+        List<Exercise> exesToDelete = _context.Exercises.Where(e => e.WorkoutId == id).ToList();
+        int workId = workToDelete.WorkoutId;
+        _context.Workouts.Remove(workToDelete);
+        _context.Exercises.RemoveRange(exesToDelete);
+        _context.SaveChanges();
+        return RedirectToAction("Dashboard", "Home");
     }
 
 

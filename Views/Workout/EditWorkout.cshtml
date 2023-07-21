@@ -24,10 +24,10 @@
                     {
                         <tr>
                             <td>@e.Name</td>
-                            <td>@e.Reps</td>
                             <td>@e.Sets</td>
+                            <td>@e.Reps</td>
                             <td>@e.Notes</td>
-                            <td class="text-center"><form action=""><button type="submit" class="btn btn-outline-danger ">Remove</button></form></td>
+                            <td class="text-center"><form asp-action="DestroyExercise" asp-controller="Workout" asp-route-id="@e.ExerciseId"><button type="submit" class="btn btn-outline-danger ">Remove</button></form></td>
                         </tr>
                     }
                 }
