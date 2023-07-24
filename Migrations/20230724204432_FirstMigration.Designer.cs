@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Fullmetal_Fitness.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20230719175757_FirstMigration")]
+    [Migration("20230724204432_FirstMigration")]
     partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,20 +27,20 @@ namespace Fullmetal_Fitness.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
 
-                    b.Property<string>("Notes")
+                    b.Property<string>("Description")
                         .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("varchar(200)");
 
-                    b.Property<int>("Reps")
-                        .HasColumnType("int");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
-                    b.Property<int>("Sets")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<int>("WorkoutId")
                         .HasColumnType("int");
@@ -50,6 +50,42 @@ namespace Fullmetal_Fitness.Migrations
                     b.HasIndex("WorkoutId");
 
                     b.ToTable("Exercises");
+                });
+
+            modelBuilder.Entity("Fullmetal_Fitness.Models.ExerciseLog", b =>
+                {
+                    b.Property<int>("ExerciseLogId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Date")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("Reps")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("Weight")
+                        .HasColumnType("int");
+
+                    b.Property<int>("WorkoutId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ExerciseLogId");
+
+                    b.HasIndex("WorkoutId");
+
+                    b.ToTable("ExerciseLogs");
                 });
 
             modelBuilder.Entity("Fullmetal_Fitness.Models.User", b =>
@@ -126,6 +162,17 @@ namespace Fullmetal_Fitness.Migrations
                     b.Navigation("Routine");
                 });
 
+            modelBuilder.Entity("Fullmetal_Fitness.Models.ExerciseLog", b =>
+                {
+                    b.HasOne("Fullmetal_Fitness.Models.Workout", "Lift")
+                        .WithMany("Log")
+                        .HasForeignKey("WorkoutId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Lift");
+                });
+
             modelBuilder.Entity("Fullmetal_Fitness.Models.Workout", b =>
                 {
                     b.HasOne("Fullmetal_Fitness.Models.User", "Creator")
@@ -144,6 +191,8 @@ namespace Fullmetal_Fitness.Migrations
 
             modelBuilder.Entity("Fullmetal_Fitness.Models.Workout", b =>
                 {
+                    b.Navigation("Log");
+
                     b.Navigation("MyExercises");
                 });
 #pragma warning restore 612, 618

@@ -1,6 +1,7 @@
 
 @model Exercise
 
+
 <form asp-controller="Workout" asp-action="AddExercise" method="post" class="text-light d-flex flex-column gap-2 align-items-start">
     <h3 class="align-self-center">Add Exercise</h3>
     <div>
@@ -11,26 +12,12 @@
         <input class="form-control" asp-for="Name">
     </div>
     <div>
-        <span asp-validation-for="Sets"></span>
+        <span asp-validation-for="Description"></span>
         <br>
-        <label class="form-label" asp-for="Sets"></label>
+        <label class="form-label" asp-for="Description"></label>
         <br>
-        <input class="form-control w-50" min="0" asp-for="Sets">
-    </div>
-    <div>
-        <span asp-validation-for="Reps"></span>
-        <br>
-        <label class="form-label" asp-for="Reps"></label>
-        <br>
-        <input class="form-control w-50" min="0" asp-for="Reps">
-    </div>
-    <div>
-        <span asp-validation-for="Notes"></span>
-        <br>
-        <label class="form-label" asp-for="Notes"></label>
-        <br>
-        <textarea class="form-control" asp-for="Notes" cols="30" rows="10"></textarea>
+        <textarea class="form-control" asp-for="Description" cols="30" rows="10"></textarea>
     </div>
     <input type="hidden" asp-for="WorkoutId" value="@Model.WorkoutId">
-    <button type="submit" class="btn btn-outline-light mt-3 align-self-end">Add To Workout</button>
+    <button type="submit" style="border: none; background-color: initial;" class="align-self-end mt-5"><i class="fa-solid fa-circle-plus fa-2xl text-light"></i></button>
 </form>

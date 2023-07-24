@@ -62,6 +62,34 @@ namespace Fullmetal_Fitness.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "ExerciseLogs",
+                columns: table => new
+                {
+                    ExerciseLogId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Reps = table.Column<int>(type: "int", nullable: false),
+                    Weight = table.Column<int>(type: "int", nullable: false),
+                    Date = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    CreatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    WorkoutId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ExerciseLogs", x => x.ExerciseLogId);
+                    table.ForeignKey(
+                        name: "FK_ExerciseLogs_Workouts_WorkoutId",
+                        column: x => x.WorkoutId,
+                        principalTable: "Workouts",
+                        principalColumn: "WorkoutId",
+                        onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "Exercises",
                 columns: table => new
                 {
@@ -69,10 +97,10 @@ namespace Fullmetal_Fitness.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Sets = table.Column<int>(type: "int", nullable: false),
-                    Reps = table.Column<int>(type: "int", nullable: false),
-                    Notes = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: false)
+                    Description = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
+                    CreatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     WorkoutId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -88,6 +116,11 @@ namespace Fullmetal_Fitness.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateIndex(
+                name: "IX_ExerciseLogs_WorkoutId",
+                table: "ExerciseLogs",
+                column: "WorkoutId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Exercises_WorkoutId",
                 table: "Exercises",
                 column: "WorkoutId");
@@ -100,6 +133,9 @@ namespace Fullmetal_Fitness.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "ExerciseLogs");
+
             migrationBuilder.DropTable(
                 name: "Exercises");
 

@@ -48,6 +48,7 @@ public class WorkoutController : Controller
     public IActionResult OneWorkout(int id)
     {
         Workout? oneWorkout = _context.Workouts.Include(e => e.MyExercises).FirstOrDefault(w => w.WorkoutId == id);
+        ViewBag.log = _context.ExerciseLogs.OrderBy(e => e.CreatedAt).Where(e => e.WorkoutId == id).ToList();
         return View("OneWorkout", oneWorkout);
     }
 
@@ -77,6 +78,22 @@ public class WorkoutController : Controller
         }
     }
 
+    [HttpPost("/exercise/log/{id}")]
+    public IActionResult LogExercise(ExerciseLog newExerciseLog, int id) 
+    {
+        if (!ModelState.IsValid)
+        {
+            Workout? oneWorkout = _context.Workouts.Include(e => e.MyExercises).FirstOrDefault(w => w.WorkoutId == id);
+            return View("OneWorkout", oneWorkout);
+        }
+        else 
+        {
+            _context.Add(newExerciseLog);
+            _context.SaveChanges();
+            return RedirectToAction ("OneWorkout", new {id = id});
+        }
+    }
+
     [HttpPost("/exercise/destroy/{id}")]
     public IActionResult DestroyExercise(int id)
     {
@@ -85,6 +102,16 @@ public class WorkoutController : Controller
         _context.Exercises.Remove(exToDelete);
         _context.SaveChanges();
         return RedirectToAction("EditWorkout", new {id = workId});
+    }
+
+    [HttpPost("/exercise/log/destroy/{id}")]
+    public IActionResult DestroyExerciseLog(int id, int hidden)
+    {
+        ExerciseLog? exLogToDelete = _context.ExerciseLogs.SingleOrDefault(e => e.ExerciseLogId == hidden);
+        int workId = exLogToDelete.WorkoutId;
+        _context.ExerciseLogs.Remove(exLogToDelete);
+        _context.SaveChanges();
+        return RedirectToAction("OneWorkout", new {id = workId});
     }
 
     [HttpPost("/workouts/destroy/{id}")]

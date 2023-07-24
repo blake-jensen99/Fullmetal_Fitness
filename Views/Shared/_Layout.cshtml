@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Fullmetal_Fitness.styles.css" asp-append-version="true" />
+    <script src="https://kit.fontawesome.com/5fb21f05ed.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -15,12 +16,12 @@
         @{
             if (Context.Session.GetInt32("UserId") != null)
             {
-                <nav class="bg-dark box-shadow mb-3 d-flex justify-content-between align-items-center p-2">
-                    <h1 class="text-light">Full Metal Fitness</h1>
-                    <div class="text-light d-flex gap-3 align-items-center">
-                        <a class="text-light" style="text-decoration: none;" asp-area="" asp-controller="Home" asp-action="Dashboard">Dashboard</a>
-                        <a class="text-light" style="text-decoration: none;" asp-area="" asp-controller="Workout" asp-action="NameWorkout">Add A Workout</a>
-                        <form asp-controller="Home" asp-action="Logout" method="post"> <button type="submit" class="text-light" style="border: none; background: inherit;">Logout</button></form>
+                <nav class="box-shadow mb-3 d-flex justify-content-between align-items-center p-2" style="background-color: rgb(27, 27, 27);">
+                    <h1 class="text-light ms-5">Full Metal Fitness</h1>
+                    <div class="text-light d-flex gap-5 me-5 align-items-center">
+                        <a class="text-light" style="text-decoration: none;" asp-area="" asp-controller="Home" asp-action="Dashboard"><i class="fa-solid fa-house fa-2xl"></i></a>
+                        <a class="text-light" style="text-decoration: none;" asp-area="" asp-controller="Workout" asp-action="NameWorkout"><i class="fa-solid fa-circle-plus fa-2xl"></i></a>
+                        <form asp-controller="Home" asp-action="Logout" method="post"> <button type="submit" class="text-light" style="border: none; background: inherit;"><i class="fa-solid fa-right-from-bracket fa-2xl"></i></button></form>
                     </div>
                 </nav>
             }
@@ -34,6 +35,7 @@
             @RenderBody()
         </main>
     </div>
+
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

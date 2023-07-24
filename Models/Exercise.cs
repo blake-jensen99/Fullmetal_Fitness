@@ -9,21 +9,17 @@ public class Exercise
     [Required(ErrorMessage = "Exercise name is required")]
     public string Name {get; set;}
 
-    [Required (ErrorMessage = "Sets are required")]
-    [Range(1, Double.PositiveInfinity, ErrorMessage = "Number cannot be negative or zero")]
-    public int Sets {get; set;}
+    [MaxLength(200, ErrorMessage = "Description cannot be more than 200 character long")]
+    public string Description {get; set;}
 
-    [Required(ErrorMessage = "Reps are required")]
-    [Range(1, Double.PositiveInfinity, ErrorMessage = "Number cannot be negative or zero")]
-    public int Reps {get; set;}
-
-    [MaxLength(200, ErrorMessage = "Notes cannot be more than 200 character long")]
-    [Display(Name = "Description")]
-    public string Notes {get; set;}
+    public DateTime CreatedAt { get; set; } = DateTime.Now;
+    public DateTime UpdatedAt { get; set; } = DateTime.Now;
 
     public int WorkoutId {get; set;}
 
     public Workout? Routine {get; set;}
+
+    
 }
 
 
