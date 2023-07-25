@@ -8,65 +8,65 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Fullmetal_Fitness
 build_property.RootNamespace = Fullmetal_Fitness
-build_property.ProjectDir = C:\Users\Blake Jensen\Desktop\Fullmetal_Fitness\
+build_property.ProjectDir = c:\Users\Blake Jensen\Desktop\Fullmetal_Fitness\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Blake Jensen\Desktop\Fullmetal_Fitness
+build_property.MSBuildProjectDirectory = c:\Users\Blake Jensen\Desktop\Fullmetal_Fitness
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Blake Jensen/Desktop/Fullmetal_Fitness/Views/Home/Dash.cshtml]
+[c:/Users/Blake Jensen/Desktop/Fullmetal_Fitness/Views/Home/Dash.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEYXNoLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Blake Jensen/Desktop/Fullmetal_Fitness/Views/Home/Index.cshtml]
+[c:/Users/Blake Jensen/Desktop/Fullmetal_Fitness/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Blake Jensen/Desktop/Fullmetal_Fitness/Views/Home/_Login.cshtml]
+[c:/Users/Blake Jensen/Desktop/Fullmetal_Fitness/Views/Home/_Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Blake Jensen/Desktop/Fullmetal_Fitness/Views/Home/_Register.cshtml]
+[c:/Users/Blake Jensen/Desktop/Fullmetal_Fitness/Views/Home/_Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfUmVnaXN0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Blake Jensen/Desktop/Fullmetal_Fitness/Views/Shared/Error.cshtml]
+[c:/Users/Blake Jensen/Desktop/Fullmetal_Fitness/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Blake Jensen/Desktop/Fullmetal_Fitness/Views/Shared/_ValidationScriptsPartial.cshtml]
+[c:/Users/Blake Jensen/Desktop/Fullmetal_Fitness/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Blake Jensen/Desktop/Fullmetal_Fitness/Views/Workout/EditWorkout.cshtml]
+[c:/Users/Blake Jensen/Desktop/Fullmetal_Fitness/Views/Workout/EditWorkout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya291dFxFZGl0V29ya291dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Blake Jensen/Desktop/Fullmetal_Fitness/Views/Workout/NameWorkout.cshtml]
+[c:/Users/Blake Jensen/Desktop/Fullmetal_Fitness/Views/Workout/NameWorkout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya291dFxOYW1lV29ya291dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Blake Jensen/Desktop/Fullmetal_Fitness/Views/Workout/OneWorkout.cshtml]
+[c:/Users/Blake Jensen/Desktop/Fullmetal_Fitness/Views/Workout/OneWorkout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya291dFxPbmVXb3Jrb3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Blake Jensen/Desktop/Fullmetal_Fitness/Views/Workout/_ExerciseForm.cshtml]
+[c:/Users/Blake Jensen/Desktop/Fullmetal_Fitness/Views/Workout/_ExerciseForm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya291dFxfRXhlcmNpc2VGb3JtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Blake Jensen/Desktop/Fullmetal_Fitness/Views/Workout/_ExerciseLogForm.cshtml]
+[c:/Users/Blake Jensen/Desktop/Fullmetal_Fitness/Views/Workout/_ExerciseLogForm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya291dFxfRXhlcmNpc2VMb2dGb3JtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Blake Jensen/Desktop/Fullmetal_Fitness/Views/_ViewImports.cshtml]
+[c:/Users/Blake Jensen/Desktop/Fullmetal_Fitness/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Blake Jensen/Desktop/Fullmetal_Fitness/Views/_ViewStart.cshtml]
+[c:/Users/Blake Jensen/Desktop/Fullmetal_Fitness/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Blake Jensen/Desktop/Fullmetal_Fitness/Views/Shared/_Layout.cshtml]
+[c:/Users/Blake Jensen/Desktop/Fullmetal_Fitness/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-rrd3rdc5fp
